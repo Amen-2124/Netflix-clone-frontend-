@@ -20,13 +20,16 @@ function Banner() {
       const request = await MovieInstance.get(requests.fetchNetflixOriginals);
       setBannerImage(
         request.data.results[
-          Math.floor(Math.random() * request.data.results.length)
-        ],
+          Math.floor(Math.random()* request.data.results.length)],
       );
     }
     fetchBannerImage();
   }, []);
-  // console.log(bannerImage)
+   // console.log(bannerImage)
+
+
+    
+
 
   return (
     <div
@@ -47,7 +50,7 @@ function Banner() {
         <h1 className={styles.title}>{bannerImage?.original_name}</h1>
         {/* description */}
         <h1 className={styles.description}>
-          {truncate(bannerImage?.overview, 120)}
+          {truncate(bannerImage?.overview,120)}
         </h1>
         {/* buttons */}
         <div className={styles.buttonContainer}>
