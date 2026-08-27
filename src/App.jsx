@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import Header from './components/'
+import Header from './components/Header/Header'
+import DisplayRow from './components/DisplayRow/DisplayRow'
+import Banner from './components/Banner/Banner'
+import Footer from './components/Footer/Footer'
+
 
 import './App.css'
 
@@ -8,7 +12,10 @@ function App() {
 
   return (
     <>
-      
+<Header/>
+<Banner/> 
+   <DisplayRow/>
+    < Footer/>
     </>
   )
 }
