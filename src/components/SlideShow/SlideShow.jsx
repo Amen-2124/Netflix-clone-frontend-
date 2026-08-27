@@ -32,7 +32,7 @@ function SlideShow({ title, movies }) {
             },
             1024: {
               slidesPerView: 5.1,
-              spaceBetween: 100,
+              spaceBetween: 10,
             },
           
           }}
