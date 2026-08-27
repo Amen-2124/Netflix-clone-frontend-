@@ -1,13 +1,13 @@
-import React from "react";
-import styles from "./SlideShow.module.css";
-import MovieCard from "../MovieCard/MovieCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+imporimport React from 'react';
+import styles from './SlideShow.module.css';
+import MovieCard from '../MovieCard/MovieCard';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 
 function SlideShow({ title, movies }) {
-  
   return (
     <div>
       <h2 className={styles.title}>{title}</h2>
@@ -15,10 +15,30 @@ function SlideShow({ title, movies }) {
         <Swiper
           modules={[Navigation]}
           navigation
-          spaceBetween={50}
-          slidesPerView={5.8}
+          spaceBetween={10}
+          slidesPerView={5.1}
+          breakpoints={{
+            0: {
+              slidesPerView: 2.2,
+              spaceBetween: 6,
+            },
+            480: {
+              slidesPerView: 3.1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView:4,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 5.1,
+              spaceBetween: 100,
+            },
+          
+          }}
         >
-          {movies?.map((movie) => (
+          {/* Array.isArray */}
+          {Array.isArray(movies) && movies.map((movie) => (
             <SwiperSlide key={movie.id}>
               <MovieCard movie={movie} />
             </SwiperSlide>
